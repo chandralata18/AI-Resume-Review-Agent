@@ -1,90 +1,68 @@
-# 🤖 AI Resume Review Agent
+# AI Resume Review Agent
 
-An AI-powered Resume Review Agent that analyzes resumes, estimates ATS compatibility, identifies strengths and weaknesses, suggests missing skills, and generates personalized interview questions using Google's Gemini model.
+An AI-powered Resume Review Agent that analyzes resumes, estimates ATS compatibility, identifies strengths and weaknesses, recommends missing skills, and generates personalized interview questions using Google's Gemini AI.
+
+Built as part of the Kaggle **AI Agents: Intensive Vibe Coding Capstone Project**.
 
 ---
 
-## 🚀 Problem Statement
+## Overview
 
-Recruiters spend very little time reviewing each resume, and many candidates don't know whether their resumes are ATS-friendly.
+Recruiters typically spend only a few seconds reviewing a resume, and many applicants are unaware of how Applicant Tracking Systems (ATS) evaluate their profiles.
 
-This project helps job seekers receive instant AI-powered feedback on their resumes by providing:
+This project helps candidates instantly evaluate their resumes by providing:
 
 - ATS Compatibility Score
 - Target Role Detection
-- Resume Summary
+- Professional Resume Summary
 - Strength Analysis
 - Weakness Detection
-- Missing Skills
-- Personalized Interview Questions
+- Missing Skill Recommendations
+- Personalized Technical Interview Questions
+
+The application provides all insights through an interactive Streamlit dashboard powered by Google's Gemini model.
 
 ---
 
-## ✨ Features
+## Features
 
-- 📄 Upload Resume in PDF format
-- 🎯 Detects the candidate's target job role
-- 📊 Generates an ATS Compatibility Score
-- 💪 Identifies resume strengths
-- ⚠ Highlights weaknesses
-- 📚 Suggests missing skills
-- 💼 Generates personalized interview questions
-- 🤖 Powered by Google Gemini AI
-- 🌐 Interactive Streamlit dashboard
-
----
-
-## 🏗️ System Architecture
-
-```
-                Streamlit UI
-                     │
-                     ▼
-          Upload Resume (PDF)
-                     │
-                     ▼
-              PDF Reader Tool
-                     │
-                     ▼
-          Extract Resume Text
-                     │
-                     ▼
-          Resume Review Agent
-                     │
-                     ▼
-          Google Gemini API
-                     │
-                     ▼
-        Structured JSON Response
-                     │
-      ┌──────────────┼──────────────┐
-      ▼              ▼              ▼
- ATS Report   Missing Skills   Interview Questions
-                     │
-                     ▼
-            Streamlit Dashboard
-```
+- Upload resumes in PDF format
+- Automatic resume text extraction
+- AI-powered ATS compatibility analysis
+- Target job role identification
+- Resume summary generation
+- Strength and weakness analysis
+- Missing skill recommendations
+- Personalized interview question generation
+- Interactive Streamlit interface
 
 ---
 
-## 📂 Project Structure
+## System Architecture
 
-```
+The following diagram illustrates the overall workflow of the AI Resume Review Agent.
+
+![System Architecture](assets/architecture.png)
+
+---
+
+## Project Structure
+
+```text
 AI-Resume-Review-Agent
 │
-├── agent/
+├── agent
 │   ├── resume_agent.py
 │   ├── prompts.py
 │   ├── role_identifier.py
 │   ├── ats_analyzer.py
 │   └── interview_generator.py
 │
-├── tools/
+├── tools
 │   └── pdf_reader.py
 │
-├── resumes/
-│
-├── assets/
+├── resumes
+├── assets
 │   └── ui.png
 │
 ├── app.py
@@ -96,7 +74,7 @@ AI-Resume-Review-Agent
 
 ---
 
-## 🛠️ Tech Stack
+## Technology Stack
 
 - Python
 - Streamlit
@@ -106,15 +84,15 @@ AI-Resume-Review-Agent
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AI-Resume-Review-Agent.git
+git clone https://github.com/chandralata18/AI-Resume-Review-Agent.git
 ```
 
-Move into the project folder
+Navigate to the project directory
 
 ```bash
 cd AI-Resume-Review-Agent
@@ -126,15 +104,15 @@ Create a virtual environment
 python -m venv venv
 ```
 
-Activate the virtual environment
+Activate the environment
 
-### Windows
+Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-### macOS/Linux
+macOS / Linux
 
 ```bash
 source venv/bin/activate
@@ -146,7 +124,7 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Create a `.env` file
+Create a `.env` file in the project root.
 
 ```env
 GEMINI_API_KEY=YOUR_API_KEY
@@ -160,54 +138,51 @@ streamlit run app.py
 
 ---
 
-## 📸 Application Screenshot
+## Application Preview
 
 ### AI Resume Review Dashboard
 
-![Application UI](assets/ui.png)
+![AI Resume Review Dashboard](assets/ui.png)
 
 ---
 
-## 🎯 How It Works
+## Workflow
 
 1. Upload a resume in PDF format.
-2. The PDF Reader extracts resume text.
-3. The Resume Review Agent processes the content.
-4. Google Gemini analyzes the resume.
-5. The application generates:
-   - ATS Score
+2. Extract resume text using the PDF Reader.
+3. Send the extracted text to the Resume Review Agent.
+4. Analyze the resume using Google's Gemini model.
+5. Generate:
+   - ATS Compatibility Score
+   - Target Role
    - Resume Summary
    - Strengths
    - Weaknesses
    - Missing Skills
    - Personalized Interview Questions
-6. Results are displayed in the Streamlit dashboard.
+6. Display the results in the Streamlit dashboard.
 
 ---
 
-## 🔒 Security
+## Security
 
-- API keys are stored securely using environment variables.
-- `.env` is excluded using `.gitignore`.
-- No sensitive user data is stored.
+- API keys are managed using environment variables.
+- Sensitive credentials are excluded from version control through `.gitignore`.
+- No user data is stored after analysis.
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
-- Google ADK Integration
-- Multi-agent architecture
-- Resume comparison
-- Job Description matching
+- Google ADK integration
+- Multi-agent workflow
+- Resume vs Job Description matching
 - Downloadable PDF reports
+- Resume version comparison
 - Multi-language support
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Chandralata Trivedi**
-
-Computer Engineering Student
-
-Built for the **Kaggle AI Agents: Intensive Vibe Coding Capstone Project** 🚀
